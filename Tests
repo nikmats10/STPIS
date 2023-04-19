@@ -1,0 +1,796 @@
+package com.example.server_auto.LogikServer;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.mock.web.MockHttpServletResponse;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.web.servlet.MockMvc;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+
+@ExtendWith(SpringExtension.class)
+@WebMvcTest(Authorization.class)
+class AuthorizationTest {
+
+    @Autowired
+    private MockMvc mockMvc;
+
+    @Test
+    void testGetAutoria() throws Exception {
+        // Setup
+        // Run the test
+        final MockHttpServletResponse response = mockMvc.perform(
+                get("/authorization/{login}/{password}/{role}", "login", "password", "role")
+                        .accept(MediaType.APPLICATION_JSON))
+                .andReturn().getResponse();
+
+        // Verify the results
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.getContentAsString()).isEqualTo("expectedResponse");
+    }
+}
+package com.example.server_auto.LogikServer;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.mock.web.MockHttpServletResponse;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.web.servlet.MockMvc;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+
+@ExtendWith(SpringExtension.class)
+@WebMvcTest(Servlet_auto.class)
+class Servlet_autoTest {
+
+    @Autowired
+    private MockMvc mockMvc;
+
+    @Test
+    void testDoGet() throws Exception {
+        // Setup
+        // Run the test
+        final MockHttpServletResponse response = mockMvc.perform(get("/Servlet_auto")
+                .accept(MediaType.APPLICATION_JSON))
+                .andReturn().getResponse();
+
+        // Verify the results
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.getContentAsString()).isEqualTo("expectedResponse");
+    }
+
+    @Test
+    void testDoPost() throws Exception {
+        // Setup
+        // Run the test
+        final MockHttpServletResponse response = mockMvc.perform(post("/Servlet_auto")
+                .content("content").contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON))
+                .andReturn().getResponse();
+
+        // Verify the results
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.getContentAsString()).isEqualTo("expectedResponse");
+    }
+
+    @Test
+    void testDoPut() throws Exception {
+        // Setup
+        // Run the test
+        final MockHttpServletResponse response = mockMvc.perform(put("/Servlet_auto")
+                .content("content").contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON))
+                .andReturn().getResponse();
+
+        // Verify the results
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.getContentAsString()).isEqualTo("expectedResponse");
+    }
+
+    @Test
+    void testDoDelete() throws Exception {
+        // Setup
+        // Run the test
+        final MockHttpServletResponse response = mockMvc.perform(delete("/Servlet_auto/{id}", 0)
+                .accept(MediaType.APPLICATION_JSON))
+                .andReturn().getResponse();
+
+        // Verify the results
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.getContentAsString()).isEqualTo("expectedResponse");
+    }
+}
+package com.example.server_auto.LogikServer;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.mock.web.MockHttpServletResponse;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.web.servlet.MockMvc;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+
+@ExtendWith(SpringExtension.class)
+@WebMvcTest(Servlet_cargo.class)
+class Servlet_cargoTest {
+
+    @Autowired
+    private MockMvc mockMvc;
+
+    @Test
+    void testDoGet() throws Exception {
+        // Setup
+        // Run the test
+        final MockHttpServletResponse response = mockMvc.perform(get("/Servlet_cargo")
+                .accept(MediaType.APPLICATION_JSON))
+                .andReturn().getResponse();
+
+        // Verify the results
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.getContentAsString()).isEqualTo("expectedResponse");
+    }
+
+    @Test
+    void testDoPost() throws Exception {
+        // Setup
+        // Run the test
+        final MockHttpServletResponse response = mockMvc.perform(post("/Servlet_cargo")
+                .content("content").contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON))
+                .andReturn().getResponse();
+
+        // Verify the results
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.getContentAsString()).isEqualTo("expectedResponse");
+    }
+
+    @Test
+    void testDoPut() throws Exception {
+        // Setup
+        // Run the test
+        final MockHttpServletResponse response = mockMvc.perform(put("/Servlet_cargo")
+                .content("content").contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON))
+                .andReturn().getResponse();
+
+        // Verify the results
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.getContentAsString()).isEqualTo("expectedResponse");
+    }
+
+    @Test
+    void testDoDelete() throws Exception {
+        // Setup
+        // Run the test
+        final MockHttpServletResponse response = mockMvc.perform(delete("/Servlet_cargo/{id}", 0)
+                .accept(MediaType.APPLICATION_JSON))
+                .andReturn().getResponse();
+
+        // Verify the results
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.getContentAsString()).isEqualTo("expectedResponse");
+    }
+}
+package com.example.server_auto.LogikServer;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.mock.web.MockHttpServletResponse;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.web.servlet.MockMvc;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+
+@ExtendWith(SpringExtension.class)
+@WebMvcTest(Servlet_client.class)
+class Servlet_clientTest {
+
+    @Autowired
+    private MockMvc mockMvc;
+
+    @Test
+    void testDoGet() throws Exception {
+        // Setup
+        // Run the test
+        final MockHttpServletResponse response = mockMvc.perform(get("/Servlet_client")
+                .accept(MediaType.APPLICATION_JSON))
+                .andReturn().getResponse();
+
+        // Verify the results
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.getContentAsString()).isEqualTo("expectedResponse");
+    }
+
+    @Test
+    void testDoPost() throws Exception {
+        // Setup
+        // Run the test
+        final MockHttpServletResponse response = mockMvc.perform(post("/Servlet_client")
+                .content("content").contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON))
+                .andReturn().getResponse();
+
+        // Verify the results
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.getContentAsString()).isEqualTo("expectedResponse");
+    }
+
+    @Test
+    void testDoPut() throws Exception {
+        // Setup
+        // Run the test
+        final MockHttpServletResponse response = mockMvc.perform(put("/Servlet_client")
+                .content("content").contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON))
+                .andReturn().getResponse();
+
+        // Verify the results
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.getContentAsString()).isEqualTo("expectedResponse");
+    }
+
+    @Test
+    void testDoDelete() throws Exception {
+        // Setup
+        // Run the test
+        final MockHttpServletResponse response = mockMvc.perform(delete("/Servlet_client/{id}", 0)
+                .accept(MediaType.APPLICATION_JSON))
+                .andReturn().getResponse();
+
+        // Verify the results
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.getContentAsString()).isEqualTo("expectedResponse");
+    }
+}
+package com.example.server_auto.LogikServer;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.mock.web.MockHttpServletResponse;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.web.servlet.MockMvc;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+
+@ExtendWith(SpringExtension.class)
+@WebMvcTest(Servlet_driver.class)
+class Servlet_driverTest {
+
+    @Autowired
+    private MockMvc mockMvc;
+
+    @Test
+    void testDoGet() throws Exception {
+        // Setup
+        // Run the test
+        final MockHttpServletResponse response = mockMvc.perform(get("/Servlet_driver")
+                .accept(MediaType.APPLICATION_JSON))
+                .andReturn().getResponse();
+
+        // Verify the results
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.getContentAsString()).isEqualTo("expectedResponse");
+    }
+
+    @Test
+    void testDoPost() throws Exception {
+        // Setup
+        // Run the test
+        final MockHttpServletResponse response = mockMvc.perform(post("/Servlet_driver")
+                .content("content").contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON))
+                .andReturn().getResponse();
+
+        // Verify the results
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.getContentAsString()).isEqualTo("expectedResponse");
+    }
+
+    @Test
+    void testDoPut() throws Exception {
+        // Setup
+        // Run the test
+        final MockHttpServletResponse response = mockMvc.perform(put("/Servlet_driver")
+                .content("content").contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON))
+                .andReturn().getResponse();
+
+        // Verify the results
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.getContentAsString()).isEqualTo("expectedResponse");
+    }
+
+    @Test
+    void testDoDelete() throws Exception {
+        // Setup
+        // Run the test
+        final MockHttpServletResponse response = mockMvc.perform(delete("/Servlet_driver/{id}", 0)
+                .accept(MediaType.APPLICATION_JSON))
+                .andReturn().getResponse();
+
+        // Verify the results
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.getContentAsString()).isEqualTo("expectedResponse");
+    }
+}
+package com.example.server_auto.LogikServer;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.mock.web.MockHttpServletResponse;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.web.servlet.MockMvc;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+
+@ExtendWith(SpringExtension.class)
+@WebMvcTest(Servlet_gruzchik.class)
+class Servlet_gruzchikTest {
+
+    @Autowired
+    private MockMvc mockMvc;
+
+    @Test
+    void testDoGet() throws Exception {
+        // Setup
+        // Run the test
+        final MockHttpServletResponse response = mockMvc.perform(get("/Servlet_gruzchik")
+                .accept(MediaType.APPLICATION_JSON))
+                .andReturn().getResponse();
+
+        // Verify the results
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.getContentAsString()).isEqualTo("expectedResponse");
+    }
+
+    @Test
+    void testDoPost() throws Exception {
+        // Setup
+        // Run the test
+        final MockHttpServletResponse response = mockMvc.perform(post("/Servlet_gruzchik")
+                .content("content").contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON))
+                .andReturn().getResponse();
+
+        // Verify the results
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.getContentAsString()).isEqualTo("expectedResponse");
+    }
+
+    @Test
+    void testDoPut() throws Exception {
+        // Setup
+        // Run the test
+        final MockHttpServletResponse response = mockMvc.perform(put("/Servlet_gruzchik")
+                .content("content").contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON))
+                .andReturn().getResponse();
+
+        // Verify the results
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.getContentAsString()).isEqualTo("expectedResponse");
+    }
+
+    @Test
+    void testDoDelete() throws Exception {
+        // Setup
+        // Run the test
+        final MockHttpServletResponse response = mockMvc.perform(delete("/Servlet_gruzchik/{id}", 0)
+                .accept(MediaType.APPLICATION_JSON))
+                .andReturn().getResponse();
+
+        // Verify the results
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.getContentAsString()).isEqualTo("expectedResponse");
+    }
+}
+package com.example.server_auto.LogikServer;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.mock.web.MockHttpServletResponse;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.web.servlet.MockMvc;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+
+@ExtendWith(SpringExtension.class)
+@WebMvcTest(Servlet_request.class)
+class Servlet_requestTest {
+
+    @Autowired
+    private MockMvc mockMvc;
+
+    @Test
+    void testDoGet() throws Exception {
+        // Setup
+        // Run the test
+        final MockHttpServletResponse response = mockMvc.perform(get("/Servlet_request")
+                .accept(MediaType.APPLICATION_JSON))
+                .andReturn().getResponse();
+
+        // Verify the results
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.getContentAsString()).isEqualTo("expectedResponse");
+    }
+
+    @Test
+    void testDoPost() throws Exception {
+        // Setup
+        // Run the test
+        final MockHttpServletResponse response = mockMvc.perform(post("/Servlet_request")
+                .content("content").contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON))
+                .andReturn().getResponse();
+
+        // Verify the results
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.getContentAsString()).isEqualTo("expectedResponse");
+    }
+
+    @Test
+    void testDoPut() throws Exception {
+        // Setup
+        // Run the test
+        final MockHttpServletResponse response = mockMvc.perform(put("/Servlet_request")
+                .content("content").contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON))
+                .andReturn().getResponse();
+
+        // Verify the results
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.getContentAsString()).isEqualTo("expectedResponse");
+    }
+
+    @Test
+    void testDoDelete() throws Exception {
+        // Setup
+        // Run the test
+        final MockHttpServletResponse response = mockMvc.perform(delete("/Servlet_request/{id}", 0)
+                .accept(MediaType.APPLICATION_JSON))
+                .andReturn().getResponse();
+
+        // Verify the results
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.getContentAsString()).isEqualTo("expectedResponse");
+    }
+}
+package com.example.server_auto.LogikServer;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.mock.web.MockHttpServletResponse;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.web.servlet.MockMvc;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+
+@ExtendWith(SpringExtension.class)
+@WebMvcTest(Servlet_route.class)
+class Servlet_routeTest {
+
+    @Autowired
+    private MockMvc mockMvc;
+
+    @Test
+    void testDoGet() throws Exception {
+        // Setup
+        // Run the test
+        final MockHttpServletResponse response = mockMvc.perform(get("/Servlet_route")
+                .accept(MediaType.APPLICATION_JSON))
+                .andReturn().getResponse();
+
+        // Verify the results
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.getContentAsString()).isEqualTo("expectedResponse");
+    }
+
+    @Test
+    void testDoPost() throws Exception {
+        // Setup
+        // Run the test
+        final MockHttpServletResponse response = mockMvc.perform(post("/Servlet_route")
+                .content("content").contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON))
+                .andReturn().getResponse();
+
+        // Verify the results
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.getContentAsString()).isEqualTo("expectedResponse");
+    }
+
+    @Test
+    void testDoPut() throws Exception {
+        // Setup
+        // Run the test
+        final MockHttpServletResponse response = mockMvc.perform(put("/Servlet_route")
+                .content("content").contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON))
+                .andReturn().getResponse();
+
+        // Verify the results
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.getContentAsString()).isEqualTo("expectedResponse");
+    }
+
+    @Test
+    void testDoDelete() throws Exception {
+        // Setup
+        // Run the test
+        final MockHttpServletResponse response = mockMvc.perform(delete("/Servlet_route/{id}", 0)
+                .accept(MediaType.APPLICATION_JSON))
+                .andReturn().getResponse();
+
+        // Verify the results
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.getContentAsString()).isEqualTo("expectedResponse");
+    }
+}
+package com.example.server_auto.LogikServer;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.mock.web.MockHttpServletResponse;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.web.servlet.MockMvc;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+
+@ExtendWith(SpringExtension.class)
+@WebMvcTest(Servlet_shipment.class)
+class Servlet_shipmentTest {
+
+    @Autowired
+    private MockMvc mockMvc;
+
+    @Test
+    void testDoGet() throws Exception {
+        // Setup
+        // Run the test
+        final MockHttpServletResponse response = mockMvc.perform(get("/Servlet_shipment")
+                .accept(MediaType.APPLICATION_JSON))
+                .andReturn().getResponse();
+
+        // Verify the results
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.getContentAsString()).isEqualTo("expectedResponse");
+    }
+
+    @Test
+    void testDoPost() throws Exception {
+        // Setup
+        // Run the test
+        final MockHttpServletResponse response = mockMvc.perform(post("/Servlet_shipment")
+                .content("content").contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON))
+                .andReturn().getResponse();
+
+        // Verify the results
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.getContentAsString()).isEqualTo("expectedResponse");
+    }
+
+    @Test
+    void testDoPut() throws Exception {
+        // Setup
+        // Run the test
+        final MockHttpServletResponse response = mockMvc.perform(put("/Servlet_shipment")
+                .content("content").contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON))
+                .andReturn().getResponse();
+
+        // Verify the results
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.getContentAsString()).isEqualTo("expectedResponse");
+    }
+
+    @Test
+    void testDoDelete() throws Exception {
+        // Setup
+        // Run the test
+        final MockHttpServletResponse response = mockMvc.perform(delete("/Servlet_shipment/{id}", 0)
+                .accept(MediaType.APPLICATION_JSON))
+                .andReturn().getResponse();
+
+        // Verify the results
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.getContentAsString()).isEqualTo("expectedResponse");
+    }
+}
+package com.example.server_auto.LogikServer;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.mock.web.MockHttpServletResponse;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.web.servlet.MockMvc;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+
+@ExtendWith(SpringExtension.class)
+@WebMvcTest(Servlet_shipping.class)
+class Servlet_shippingTest {
+
+    @Autowired
+    private MockMvc mockMvc;
+
+    @Test
+    void testDoGet() throws Exception {
+        // Setup
+        // Run the test
+        final MockHttpServletResponse response = mockMvc.perform(get("/Servlet_shipping")
+                .accept(MediaType.APPLICATION_JSON))
+                .andReturn().getResponse();
+
+        // Verify the results
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.getContentAsString()).isEqualTo("expectedResponse");
+    }
+
+    @Test
+    void testDoPost() throws Exception {
+        // Setup
+        // Run the test
+        final MockHttpServletResponse response = mockMvc.perform(post("/Servlet_shipping")
+                .content("content").contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON))
+                .andReturn().getResponse();
+
+        // Verify the results
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.getContentAsString()).isEqualTo("expectedResponse");
+    }
+
+    @Test
+    void testDoPut() throws Exception {
+        // Setup
+        // Run the test
+        final MockHttpServletResponse response = mockMvc.perform(put("/Servlet_shipping")
+                .content("content").contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON))
+                .andReturn().getResponse();
+
+        // Verify the results
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.getContentAsString()).isEqualTo("expectedResponse");
+    }
+
+    @Test
+    void testDoDelete() throws Exception {
+        // Setup
+        // Run the test
+        final MockHttpServletResponse response = mockMvc.perform(delete("/Servlet_shipping/{id}", 0)
+                .accept(MediaType.APPLICATION_JSON))
+                .andReturn().getResponse();
+
+        // Verify the results
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.getContentAsString()).isEqualTo("expectedResponse");
+    }
+}
+package com.example.server_auto.LogikServer;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.mock.web.MockHttpServletResponse;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.web.servlet.MockMvc;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+
+@ExtendWith(SpringExtension.class)
+@WebMvcTest(Servlet_user.class)
+class Servlet_userTest {
+
+    @Autowired
+    private MockMvc mockMvc;
+
+    @Test
+    void testDoGet() throws Exception {
+        // Setup
+        // Run the test
+        final MockHttpServletResponse response = mockMvc.perform(get("/Servlet_user")
+                .accept(MediaType.APPLICATION_JSON))
+                .andReturn().getResponse();
+
+        // Verify the results
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.getContentAsString()).isEqualTo("expectedResponse");
+    }
+
+    @Test
+    void testDoPost() throws Exception {
+        // Setup
+        // Run the test
+        final MockHttpServletResponse response = mockMvc.perform(post("/Servlet_user")
+                .content("content").contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON))
+                .andReturn().getResponse();
+
+        // Verify the results
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.getContentAsString()).isEqualTo("expectedResponse");
+    }
+
+    @Test
+    void testDoPut() throws Exception {
+        // Setup
+        // Run the test
+        final MockHttpServletResponse response = mockMvc.perform(put("/Servlet_user")
+                .content("content").contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON))
+                .andReturn().getResponse();
+
+        // Verify the results
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.getContentAsString()).isEqualTo("expectedResponse");
+    }
+
+    @Test
+    void testDoDelete() throws Exception {
+        // Setup
+        // Run the test
+        final MockHttpServletResponse response = mockMvc.perform(delete("/Servlet_user/{id}", 0)
+                .accept(MediaType.APPLICATION_JSON))
+                .andReturn().getResponse();
+
+        // Verify the results
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.getContentAsString()).isEqualTo("expectedResponse");
+    }
+}
